@@ -2,6 +2,7 @@
 #ifndef lcd_h
 #define lcd_h
 
+#include "stdbool.h"
 
 #define DDRAM_ADDRESS_SECOND_LINE 0x40
 #define DDRAM_ADDRESS_FIRST_LINE 0x0
@@ -23,7 +24,6 @@
 #define INSTRUCTION_FUNCTION_SET_Msk (1 << INSTRUCTION_FUNCTION_SET_Pos)
 #define INSTRUCTION_DDRAM_ADDRESS_SET_Msk (1 << INSTRUCTION_DDRAM_ADDRESS_SET_Pos)
 
-
 #define DISPLAY_DELAY 3000
 #define DELAY_SETUP_TIME 1
 
@@ -31,5 +31,10 @@ enum Line {
 	FIRST,
 	SECOND
 };
+
+
+void LCD_print(const char *message, enum Line line);
+void display_init(bool dual_line, bool large_font, bool cursor_on, bool cursor_blink, bool increment_mode, bool display_shift_on);
+void display_clear();
 
 #endif
