@@ -65,8 +65,8 @@ void keypad_gpio_init()
 void led_gpio_init()
 { 
 	// set LED as output
-	GPIOB->MODER &= ~(GPIO_MODER_MODE0);
-	GPIOB->MODER |= (GPIO_MODER_MODE0_0);
+	GPIOA->MODER &= ~(GPIO_MODER_MODE4);
+	GPIOA->MODER |= (GPIO_MODER_MODE4_0);
 }
 
 

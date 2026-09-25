@@ -45,6 +45,9 @@ bool key_is_pressed(uint8_t row, uint8_t col)
 
 int get_key_value(uint8_t row, uint8_t col)
 {
+    if (row == 0 && col == 0)
+        return 50;
+
 	// treat all rows but the last one as a regularly ordered numerical grid
 	if (row < ROW_COUNT - 1)
 		return (row * COL_COUNT) + col + 1;
@@ -69,5 +72,5 @@ int get_pressed_key()
 			if (key_is_pressed(i, j))
 				return get_key_value(i, j);
 
-	return INVALID_VALUE;
+	return 50;
 }

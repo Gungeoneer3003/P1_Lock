@@ -10,7 +10,6 @@
 
 #define PA_ROW_START 5
 #define PC_COLUMN_START 10
-#define PA_LED_START 5 
 
 #define INVALID_VALUE -1
 
