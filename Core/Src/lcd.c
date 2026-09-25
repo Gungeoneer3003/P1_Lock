@@ -96,10 +96,6 @@ void display_on_off(bool display_on, bool cursor_on, bool cursor_blink)
 	instruction_send(mask);
 }
 
-void display_cursor_shift(bool shift_display, bool right)
-{
-}
-
 void function_set(bool byte_mode, bool dual_line, bool font)
 {
 	static const uint8_t argument_count = 3;
@@ -152,10 +148,6 @@ void LCD_print(const char *message, enum Line line)
 	return;
 }
 
-void bus_init()
-{
-	RCC->AHB2ENR |= (RCC_AHB2ENR_GPIOCEN);
-}
 
 void display_init(bool dual_line, bool large_font, bool cursor_on, bool cursor_blink, bool increment_mode, bool display_shift_on)
 {
@@ -173,19 +165,5 @@ void display_init(bool dual_line, bool large_font, bool cursor_on, bool cursor_b
 }
 
 // TODO: check validity
-void gpio_init()
-{
-	bus_init();
 
-	//Set PC0-9 as input mode
-	GPIOC->MODER &= ~(GPIO_MODER_MODE0 | GPIO_MODER_MODE1 | GPIO_MODER_MODE2 | GPIO_MODER_MODE3);
-	GPIOC->MODER &= ~(GPIO_MODER_MODE4 | GPIO_MODER_MODE5 | GPIO_MODER_MODE6);
-	GPIOC->MODER &= ~(GPIO_MODER_MODE7 | GPIO_MODER_MODE8 | GPIO_MODER_MODE9);
-
-	GPIOC->MODER |= (GPIO_MODER_MODE0_0 | GPIO_MODER_MODE1_0 | GPIO_MODER_MODE2_0 | GPIO_MODER_MODE3_0);
-	GPIOC->MODER |= (GPIO_MODER_MODE4_0 | GPIO_MODER_MODE5_0 | GPIO_MODER_MODE6_0);
-	GPIOC->MODER |= (GPIO_MODER_MODE7_0 | GPIO_MODER_MODE8_0 | GPIO_MODER_MODE9_0);
-
-	return;
-}
 
