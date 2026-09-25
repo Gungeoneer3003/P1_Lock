@@ -32,4 +32,7 @@ enum Line {
 	SECOND
 };
 
+
+void display_clear();
+
 #endif
