@@ -39,6 +39,27 @@ void status_message(enum State state, char *input)
 	}
 }
 
+void buffer_append(char *buffer, char ch)
+{
+	int len = strlen(buffer);
+	buffer[len] = ch;
+}
+
+void buffer_backspace(char *buffer)
+{
+	int len = strlen(buffer);
+	if (len == 0)
+		return;
+
+	buffer[len - 1] = 0;
+}
+
+void buffer_reset(char *buffer)
+{
+	int len = strlen(buffer);
+	memset(buffer, 0, len);
+}
+
 int main()
 {
 	init();
@@ -70,32 +91,28 @@ int main()
 		switch (state) {
 		case LOCKED:
 			if (keyInput == INPUT_STAR) {
-				memset(input, 0, sizeof(input));
-				keyPos = 0;
+				buffer_reset(input);
 				continue;
 			}
 
 			if (keyInput == INPUT_POUND) {
-				if (keyInput == 0)
-					continue;
-
-				keyPos--;
-				input[keyPos] = 0;
+				buffer_backspace(input);
 				continue;
 			}
 
-			input[keyPos] = '0' + keyInput;
-			keyPos++;
+			buffer_append(input, '0' + keyInput);
 
 			if (strcmp(input, password) == 0) {
-				memset(input, 0, sizeof(input));
-				keyPos = 0;
 				state = UNLOCKED;
 			}
 
 			break;
 
 		case UNLOCKED:
+			// buffer is empty while unlocked
+			memset(input, 0, sizeof(input));
+			keyPos = 0;
+
 			if (keyInput == INPUT_STAR) {
 				state = LOCKED;
 				continue;
@@ -106,26 +123,31 @@ int main()
 				continue;
 			}
 
+			break;
+
 		case CHANGING:
 			// change password
-			if (keyInput == INPUT_STAR) {
-				memset(input, 0, sizeof(input));
-				keyPos = 0;
+			int len = strlen(input);
+			if (keyInput == INPUT_POUND) {
+				if (len == 0) {
+					state = LOCKED;
+				}
+
+				buffer_backspace(input);
 				continue;
 			}
 
-			if (keyInput == INPUT_POUND) {
-				if (keyInput == 0)
+			if (keyInput == INPUT_STAR) {
+				if (len < 4)
 					continue;
 
-				keyPos--;
-				input[keyPos] = 0;
+				strcpy(password, input);
+				buffer_reset(input);
+				state = LOCKED;
 				continue;
 			}
 
-			input[keyPos] = '0' + keyInput;
-			keyPos++;
-			
+			buffer_append(input, '0' + keyInput);
 		}
 	}
 }
