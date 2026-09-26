@@ -26,7 +26,7 @@ void welcome_message()
 	LCD_print("Enter key here", SECOND);
 }
 
-enum State { LOCKED, INPUT, UNLOCKED, CHANGING };
+enum State { LOCKED, UNLOCKED, CHANGING };
 
 void status_message(enum State state, char *input)
 {
@@ -38,7 +38,6 @@ void status_message(enum State state, char *input)
 		LCD_print("UNLOCKED", FIRST);
 	}
 }
-
 
 int main()
 {
@@ -68,58 +67,65 @@ int main()
 			continue;
 		}
 
-
 		switch (state) {
 		case LOCKED:
-			if (keyInput == INPUT_STAR || INPUT_POUND) {
-				continue;
-			} else {
-				input[keyPos] = '0' + keyInput;
-				keyPos++;
-				state = INPUT;
-			}
-
-			break;
-
-		case INPUT:
 			if (keyInput == INPUT_STAR) {
 				memset(input, 0, sizeof(input));
 				keyPos = 0;
-				state = LOCKED;
+				continue;
+			}
 
-			} else if (keyInput == INPUT_POUND) {
+			if (keyInput == INPUT_POUND) {
+				if (keyInput == 0)
+					continue;
+
 				keyPos--;
 				input[keyPos] = 0;
+				continue;
+			}
 
-				if (keyPos == 0) {
-					state = LOCKED;
-				}
+			input[keyPos] = '0' + keyInput;
+			keyPos++;
 
-			} else {
-				input[keyPos] = '0' + keyInput;
-				keyPos++;
-
-				if (strcmp(input, password) == 0) {
-					state = UNLOCKED;
-				}
+			if (strcmp(input, password) == 0) {
+				memset(input, 0, sizeof(input));
+				keyPos = 0;
+				state = UNLOCKED;
 			}
 
 			break;
 
 		case UNLOCKED:
 			if (keyInput == INPUT_STAR) {
-				memset(input, 0, sizeof(input));
-				keyPos = 0;
 				state = LOCKED;
-
-			} else if (keyInput == INPUT_POUND) {
-				//Enter changing
+				continue;
 			}
 
-			break;
+			if (keyInput == INPUT_POUND) {
+				state = CHANGING;
+				continue;
+			}
 
 		case CHANGING:
-			//do stuff
+			// change password
+			if (keyInput == INPUT_STAR) {
+				memset(input, 0, sizeof(input));
+				keyPos = 0;
+				continue;
+			}
+
+			if (keyInput == INPUT_POUND) {
+				if (keyInput == 0)
+					continue;
+
+				keyPos--;
+				input[keyPos] = 0;
+				continue;
+			}
+
+			input[keyPos] = '0' + keyInput;
+			keyPos++;
+			
 		}
-	}	
 	}
+}
