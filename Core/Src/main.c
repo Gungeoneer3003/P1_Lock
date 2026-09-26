@@ -1,7 +1,7 @@
-#include "lcd.h"
 #include "init.h"
 #include "keypad.h"
 #include "led.h"
+#include "lcd.h"
 #include "stdbool.h"
 #include "stm32l4xx_hal.h"
 #include <stddef.h>

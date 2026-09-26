@@ -12,4 +12,3 @@ void LED_turn_off()
 void LED_turn_on() {
     GPIOA->ODR |= GPIO_ODR_OD4;
 }
-
