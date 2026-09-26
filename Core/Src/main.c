@@ -88,16 +88,16 @@ int main()
 	strcpy(password, "1234");
 
 	int keyInput = 0;
-	int keyPos = 0;
 
 	enum State state = LOCKED;
 
 	while (1) {
 		status_message(state, input);
-		keyInput = get_pressed_key();
-		// int input_length = strlen(keyInput);
 
-		if (keyInput == INVALID_VALUE) {
+		keyInput = get_pressed_key();
+		while (keyInput == INVALID_VALUE) {
+			keyInput = get_pressed_key();
+			HAL_Delay(300);
 			continue;
 		}
 
