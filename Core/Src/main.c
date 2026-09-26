@@ -12,32 +12,56 @@ int main() {
     gpio_init();
 	display_init(true, false, true, true, true, false);
 
+    char* password = "12345678";
     
-    LCD_print("Hello there", FIRST);
-	LCD_print("Key is 0", SECOND);
+    LCD_print("Welcome!", FIRST);
+	LCD_print("Enter key here", SECOND);
     LED_turn_on();
 
     HAL_Delay(3000);
 
-    char str[12];
-    int key = 0;
+    char attempt[16];
+    
+    char* keyBuffer;
+    int keyInput = 0;
+    int currentIndex = 0;
 
     while (1) {
-		key = get_pressed_key();
-        if (key == INVALID_VALUE)
+		keyInput = get_pressed_key();
+        if (keyInput == INVALID_VALUE)
 			continue;
-		
-		if (key == 1) 
-        {
+        
+        if (keyInput == 10) {
+            memset(attempt, 0, sizeof(attempt));
+            currentIndex = 0;
+
             display_clear();
-            HAL_Delay(2000);
 
-            snprintf(str, sizeof(str), "%d", key);
+            LCD_print("Welcome!", FIRST);
+	        LCD_print("Enter key here", SECOND);
+            
+            continue;
+        }
 
-            LCD_print("Kenobi!", FIRST);
-	        LCD_print(str, SECOND);
-        }     
+        
+        if (keyInput == 15) {
+            attempt[c-1] = 0;
+            currentIndex--;
+            
+        
+		
 
-		HAL_Delay(1000);
+        if (strcmp(password, attempt) == 0) {
+            while(1) {         
+		        keyInput = get_pressed_key();
+                if (keyInput == INVALID_VALUE)
+			        continue;
+	            
+                if(keyInput == 15) {
+                    LCD_PRINT("
+                    while(1) {
+                        
+
+		HAL_Delay(500);
 	}
 }
