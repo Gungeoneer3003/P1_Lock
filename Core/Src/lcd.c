@@ -64,7 +64,7 @@ uint8_t instruction_mask_create(uint8_t offset, uint8_t argument_count, bool *ar
 	return mask;
 }
 
-void display_clear()
+void LCD_clear()
 {
 	instruction_send(INSTRUCTION_DISPLAY_CLEAR_Msk);
 }
@@ -149,7 +149,7 @@ void LCD_print(const char *message, enum Line line)
 }
 
 
-void display_init(bool dual_line, bool large_font, bool cursor_on, bool cursor_blink, bool increment_mode, bool display_shift_on)
+void LCD_init(bool dual_line, bool large_font, bool cursor_on, bool cursor_blink, bool increment_mode, bool display_shift_on)
 {
 	function_set(true, dual_line, large_font);
 	HAL_Delay(100);
@@ -159,7 +159,7 @@ void display_init(bool dual_line, bool large_font, bool cursor_on, bool cursor_b
 	HAL_Delay(100);
 	display_on_off(true, cursor_on, cursor_blink);
 	HAL_Delay(100);
-	display_clear();
+	LCD_clear();
 	HAL_Delay(100);
 	entry_mode_set(increment_mode, display_shift_on);
 }

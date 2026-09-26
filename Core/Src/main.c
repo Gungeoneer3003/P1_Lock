@@ -14,16 +14,16 @@
 
 #define LINE_WIDTH 16
 
+
+void welcome_message() {
+    LCD_print("Welcome!", FIRST);
+    LCD_print("Enter key here", SECOND);
+}
+
 void init()
 {
 	gpio_init();
-	display_init(true, false, true, true, true, false);
-}
-
-void welcome_message()
-{
-	LCD_print("Welcome!", FIRST);
-	LCD_print("Enter key here", SECOND);
+	LCD_init(true, false, true, true, true, false);
 }
 
 enum State { LOCKED, UNLOCKED, CHANGING };
@@ -31,11 +31,24 @@ enum State { LOCKED, UNLOCKED, CHANGING };
 void status_message(enum State state, char *input)
 {
 	switch (state) {
-	case (LOCKED):
-		LCD_print("LOCKED", FIRST);
-		LCD_print(input, SECOND);
-	case (UNLOCKED):
-		LCD_print("UNLOCKED", FIRST);
+	    case (LOCKED):
+		    LCD_clear();
+            LCD_print("LOCKED", FIRST);
+		    LCD_print(input, SECOND);
+	        LED_turn_on();
+            break;
+
+        case (UNLOCKED):
+		    LCD_clear();
+            LCD_print("UNLOCKED", FIRST);
+            LED_turn_off();
+            break;
+
+        case (CHANGING):
+            LCD_clear();
+            LCD_print("ENTER PASSWORD", FIRST);
+            LCD_print(input, SECOND);
+            break;
 	}
 }
 

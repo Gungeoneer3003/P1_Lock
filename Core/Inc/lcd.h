@@ -34,7 +34,7 @@ enum Line {
 };
 
 void LCD_print(const char *message, enum Line line);
-void display_init(bool dual_line, bool large_font, bool cursor_on, bool cursor_blink, bool increment_mode, bool display_shift_on);
-void display_clear();
+void LCD_init(bool dual_line, bool large_font, bool cursor_on, bool cursor_blink, bool increment_mode, bool display_shift_on);
+void LCD_clear();
 
 #endif
