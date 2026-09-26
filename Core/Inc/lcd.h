@@ -26,6 +26,7 @@
 
 #define DISPLAY_DELAY 3000
 #define DELAY_SETUP_TIME 1
+#define LINE_LENGTH 16
 
 enum Line {
 	FIRST,

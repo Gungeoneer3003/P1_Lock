@@ -132,7 +132,7 @@ void LCD_write_char(uint8_t letter)
 void LCD_print(const char *message, enum Line line)
 {
 	size_t length = strlen(message);
-	if (length > 16) {
+	if (length > LINE_LENGTH) {
 		message = "BAD LENGTH";
 	}
 
