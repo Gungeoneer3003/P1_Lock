@@ -27,7 +27,7 @@ int main() {
         if (key == INVALID_VALUE)
 			continue;
 		
-		if (key == 50) 
+		if (key == 1) 
         {
             display_clear();
             HAL_Delay(2000);

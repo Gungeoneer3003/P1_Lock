@@ -21,10 +21,11 @@ void gpio_init()
     led_gpio_init();
 }
 
-// Start the heart
+// Start the 2 hearts
 void bus_init()
 {
 	RCC->AHB2ENR |= (RCC_AHB2ENR_GPIOCEN);
+	RCC->AHB2ENR |= (RCC_AHB2ENR_GPIOAEN);
 }
 
 // LCD panel will use pines GPIOC 0-9
