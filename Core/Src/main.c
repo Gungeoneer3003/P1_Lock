@@ -7,61 +7,93 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
-int main() {
-    gpio_init();
+#define INPUT_STAR 10
+#define INPUT_POUND 15
+
+void init()
+{
+	gpio_init();
 	display_init(true, false, true, true, true, false);
+}
 
-    char* password = "12345678";
-    
-    LCD_print("Welcome!", FIRST);
+void welcome_message()
+{
+	LCD_print("Welcome!", FIRST);
 	LCD_print("Enter key here", SECOND);
-    LED_turn_on();
+}
 
-    HAL_Delay(3000);
 
-    char attempt[16];
-    
-    char* keyBuffer;
-    int keyInput = 0;
-    int currentIndex = 0;
 
-    while (1) {
+enum State {
+	LOCKED,
+	UNLOCKED
+};
+
+int main()
+{
+	init();
+	welcome_message();
+	LED_turn_on();
+
+	HAL_Delay(3000);
+
+	char password[16] = { 0 };
+	char attempt[16] = { 0 };
+
+	strcpy(password, "1234");
+
+	int keyInput = 0;
+	int i = 0;
+
+	enum State state = LOCKED;
+
+	while (1) {
+		switch (state) {
+
+		case LOCKED:
+
+			keyInput = get_pressed_key();
+			if (keyInput == INVALID_VALUE) {
+				continue;
+			}
+
+			if (keyInput == INPUT_STAR) {
+				
+			}
+
+
+
+	}
+
 		keyInput = get_pressed_key();
-        if (keyInput == INVALID_VALUE)
+		if (keyInput == INVALID_VALUE)
 			continue;
-        
-        if (keyInput == 10) {
-            memset(attempt, 0, sizeof(attempt));
-            currentIndex = 0;
 
-            display_clear();
+		if (keyInput == 10) {
+			memset(attempt, 0, sizeof(attempt));
+			i = 0;
 
-            LCD_print("Welcome!", FIRST);
-	        LCD_print("Enter key here", SECOND);
-            
-            continue;
-        }
+			display_clear();
 
-        
-        if (keyInput == 15) {
-            attempt[c-1] = 0;
-            currentIndex--;
-            
-        
-		
+			LCD_print("Welcome!", FIRST);
+			LCD_print("Enter key here", SECOND);
 
-        if (strcmp(password, attempt) == 0) {
-            while(1) {         
-		        keyInput = get_pressed_key();
-                if (keyInput == INVALID_VALUE)
-			        continue;
-	            
-                if(keyInput == 15) {
-                    LCD_PRINT("
-                    while(1) {
-                        
+			continue;
+		}
 
-		HAL_Delay(500);
+		if (keyInput == 15) {
+			attempt[i - 1] = 0;
+			i--;
+
+			if (strcmp(password, attempt) == 0) {
+				while (1) {
+					keyInput = get_pressed_key();
+					if (keyInput == INVALID_VALUE)
+						continue;
+				}
+			}
+		}
 	}
 }
