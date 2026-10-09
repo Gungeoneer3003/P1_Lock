@@ -2801,7 +2801,17 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 111.76) (xy 157.48 69.85)
+			(xy 144.78 74.93) (xy 152.4 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a0ee6f8-7d09-4c5b-b63b-dc308c259218")
+	)
+	(wire
+		(pts
+			(xy 157.48 110.49) (xy 157.48 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2831,7 +2841,17 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 111.76) (xy 157.48 111.76)
+			(xy 187.96 115.57) (xy 152.4 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c81e99c6-c6fa-4e62-aebb-4f203156d761")
+	)
+	(wire
+		(pts
+			(xy 187.96 110.49) (xy 157.48 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2868,6 +2888,16 @@
 			(type default)
 		)
 		(uuid "edf59c2d-b62e-4dfe-8f8f-bcb4232e021e")
+	)
+	(wire
+		(pts
+			(xy 152.4 115.57) (xy 152.4 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eff93efb-812d-474c-9671-a811a369f0f4")
 	)
 	(symbol
 		(lib_id "Device:LED")
