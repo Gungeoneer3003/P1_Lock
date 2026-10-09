@@ -1,5 +1,0 @@
-(sym_lib_table
-	(version 7)
-	(lib (name "SXTHM221FF074-12.288M") (type "KiCad") (uri "/Users/alan/Downloads/SXTHM221FF074-12.288M/SXTHM221FF074-12.288M.kicad_sym") (options "") (descr ""))
-	(lib (name "P1_SymbolLibrary") (type "KiCad") (uri "/Users/alan/Projects/STM32/P1_Lock/P1_SymbolLibrary.kicad_sym") (options "") (descr ""))
-)
