@@ -17,3 +17,6 @@ CMakeUserPresets.json
 
 # CLion
 #cmake-build-*
+
+# KiCad
+.history/

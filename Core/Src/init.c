@@ -12,13 +12,13 @@ void led_gpio_init();
 void bus_init();
 
 // Init every pin for this project
-void gpio_init() 
-{ 
+void gpio_init()
+{
 	HAL_Init();
-    bus_init();
-    lcd_gpio_init();
-    keypad_gpio_init();
-    led_gpio_init();
+	bus_init();
+	lcd_gpio_init();
+	keypad_gpio_init();
+	led_gpio_init();
 }
 
 // Start the 2 hearts
@@ -31,7 +31,7 @@ void bus_init()
 // LCD panel will use pines GPIOC 0-9
 void lcd_gpio_init()
 {
-    //LCD Panel
+	//LCD Panel
 	//Set PC0-9 as input mode
 	GPIOC->MODER &= ~(GPIO_MODER_MODE0 | GPIO_MODER_MODE1 | GPIO_MODER_MODE2 | GPIO_MODER_MODE3);
 	GPIOC->MODER &= ~(GPIO_MODER_MODE4 | GPIO_MODER_MODE5 | GPIO_MODER_MODE6);
@@ -47,7 +47,6 @@ void lcd_gpio_init()
 // Keypad will use pins GPIOA 5-8 and GPIOC 10-12
 void keypad_gpio_init()
 {
-
 	// set rows as input
 	// PC0-3
 	GPIOA->MODER &= ~(GPIO_MODER_MODE5 | GPIO_MODER_MODE6 | GPIO_MODER_MODE7 | GPIO_MODER_MODE8);
@@ -62,12 +61,10 @@ void keypad_gpio_init()
 	GPIOC->MODER |= (GPIO_MODER_MODE10_0 | GPIO_MODER_MODE11_0 | GPIO_MODER_MODE12_0);
 }
 
-//LED will use pin GPIOB pin 0 
+//LED will use pin GPIOB pin 0
 void led_gpio_init()
-{ 
+{
 	// set LED as output
 	GPIOA->MODER &= ~(GPIO_MODER_MODE4);
 	GPIOA->MODER |= (GPIO_MODER_MODE4_0);
 }
-
-
