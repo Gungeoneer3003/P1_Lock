@@ -97,7 +97,7 @@ int main()
 		keyInput = get_pressed_key();
 		while (keyInput == INVALID_VALUE) {
 			keyInput = get_pressed_key();
-			HAL_Delay(300);
+			HAL_Delay(25);
 			continue;
 		}
 
@@ -124,7 +124,6 @@ int main()
 		case UNLOCKED:
 			// buffer is empty while unlocked
 			memset(input, 0, sizeof(input));
-			keyPos = 0;
 
 			if (keyInput == INPUT_STAR) {
 				state = LOCKED;
