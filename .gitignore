@@ -20,3 +20,6 @@ CMakeUserPresets.json
 
 # KiCad
 .history/
+
+# Local hardware notes
+/hardware/LOCAL_NOTES.md
