@@ -4197,16 +4197,6 @@
 		)
 		(uuid "37102f04-b2bf-4bf1-bd8c-749299810dbf")
 	)
-	(label "PA4_LCD_VDD"
-		(at 142.24 151.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "529f84ac-0107-423c-98de-132f05503b26")
-	)
 	(label "PC10_COL1"
 		(at 127 156.21 0)
 		(effects

@@ -1,3 +1,17 @@
+/* CPE 3160
+ * John Oliver
+ *
+ * P1 - Lock
+ * Chris Amey and Alan Kusparmakov
+ *
+ * Video: 
+ * 
+ * Schematic: 
+ * https://drive.google.com/file/d/1SX4DZLqecqLpMrKSfqTl6fLLpEubJk_C/view?usp=sharing
+ * 
+ *
+ * /
+
 #include "init.h"
 #include "keypad.h"
 #include "led.h"
