@@ -1,5 +1,5 @@
-See the schematic (created with KiCad) here: [[P1_Schematic.pdf]]
-See the video here: [[https://drive.google.com/file/d/1hArrJB_lnd-JMD0XwG729pXTaAC3bJnJ/view?usp=sharing]]
+See the schematic (created with KiCad) here: [P1_Schematic.pdf]
+See the video here: https://drive.google.com/file/d/1hArrJB_lnd-JMD0XwG729pXTaAC3bJnJ/view?usp=sharing
 
 **Sociotechnical Question**
 
