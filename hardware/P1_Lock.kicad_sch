@@ -2557,7 +2557,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "DS1"
-				(at -31.623 7.239 0)
+				(at -31.496 14.986 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2568,7 +2568,7 @@
 				)
 			)
 			(property "Value" "QAPASS 1602A"
-				(at -31.623 4.699 0)
+				(at -31.496 12.446 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2637,7 +2637,7 @@
 			)
 			(symbol "QAPASS 1602A_1_1"
 				(pin power_in line
-					(at 21.59 1.27 180)
+					(at -19.05 2.54 0)
 					(length 2.54)
 					(name "VSS"
 						(effects
@@ -2655,7 +2655,7 @@
 					)
 				)
 				(pin power_in line
-					(at -19.05 1.27 0)
+					(at 21.59 0 180)
 					(length 2.54)
 					(name "VDD"
 						(effects
@@ -3529,7 +3529,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 59.69) (xy 102.87 59.69)
+			(xy 99.06 60.96) (xy 102.87 60.96)
 		)
 		(stroke
 			(width 0)
@@ -3579,7 +3579,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 123.19) (xy 187.96 162.56)
+			(xy 187.96 123.19) (xy 187.96 163.83)
 		)
 		(stroke
 			(width 0)
@@ -3639,7 +3639,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 162.56) (xy 104.14 107.95)
+			(xy 104.14 163.83) (xy 104.14 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3779,7 +3779,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 59.69) (xy 102.87 57.15)
+			(xy 102.87 60.96) (xy 102.87 57.15)
 		)
 		(stroke
 			(width 0)
@@ -3899,7 +3899,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 59.69) (xy 55.88 102.87)
+			(xy 55.88 58.42) (xy 55.88 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3939,7 +3939,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 162.56) (xy 104.14 162.56)
+			(xy 187.96 163.83) (xy 104.14 163.83)
 		)
 		(stroke
 			(width 0)
@@ -4059,7 +4059,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 59.69) (xy 55.88 59.69)
+			(xy 58.42 58.42) (xy 55.88 58.42)
 		)
 		(stroke
 			(width 0)
@@ -4107,7 +4107,7 @@
 		)
 		(uuid "fb7f3486-c667-428e-bc76-6a394a3aa149")
 	)
-	(label "PA5_COL1"
+	(label "PA5_ROW1"
 		(at 160.02 107.95 0)
 		(effects
 			(font
@@ -4116,7 +4116,77 @@
 			(justify left bottom)
 		)
 		(uuid "094e2520-8c7a-406b-a9f8-d94ffe79cca9")
-    )
+	)
+	(label "PA6_ROW2"
+		(at 157.48 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0a590d38-d37a-4fca-8c16-5bb41583debd")
+	)
+	(label "PC11_COL2"
+		(at 127 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0ec6b268-1e7e-40f5-a51f-78c95461b829")
+	)
+	(label "PA7_ROW3"
+		(at 154.94 113.03 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1de3ac59-cf52-46f6-b555-794e482701fe")
+	)
+	(label "PC12_COL3"
+		(at 127 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "37102f04-b2bf-4bf1-bd8c-749299810dbf")
+	)
+	(label "PA4_LCD_VDD"
+		(at 142.24 151.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "529f84ac-0107-423c-98de-132f05503b26")
+	)
+	(label "PC10_COL1"
+		(at 127 156.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7ed93882-d572-4603-a0fd-3b7811a4d52a")
+	)
+	(label "PA8_ROW4"
+		(at 152.4 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b71c8fdd-efd4-413a-99fb-4957938e32ae")
+	)
 	(symbol
 		(lib_id "Device:LED")
 		(at 171.45 63.5 0)
@@ -4221,7 +4291,7 @@
 		(fields_autoplaced yes)
 		(uuid "3a0cd234-ea34-4d01-a382-3f6336e4ac19")
 		(property "Reference" "DS1"
-			(at 45.847 53.721 0)
+			(at 45.974 45.974 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4232,7 +4302,7 @@
 			)
 		)
 		(property "Value" "QAPASS 1602A"
-			(at 45.847 56.261 0)
+			(at 45.974 48.514 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
