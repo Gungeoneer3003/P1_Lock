@@ -3252,6 +3252,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 67.31) (xy 160.02 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93faf87b-f12b-417d-a996-dd3162a60542")
+	)
+	(wire
+		(pts
 			(xy 83.82 102.87) (xy 83.82 151.13)
 		)
 		(stroke
@@ -3422,16 +3432,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 67.31) (xy 160.02 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "edf59c2d-b62e-4dfe-8f8f-bcb4232e021e")
-	)
-	(wire
-		(pts
 			(xy 109.22 87.63) (xy 83.82 87.63)
 		)
 		(stroke
@@ -3489,6 +3489,16 @@
 			(type default)
 		)
 		(uuid "faab7342-fe73-4c49-9d06-f982c49755e5")
+	)
+	(label "PA5_COL1"
+		(at 160.02 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "094e2520-8c7a-406b-a9f8-d94ffe79cca9")
 	)
 	(symbol
 		(lib_id "Device:LED")
