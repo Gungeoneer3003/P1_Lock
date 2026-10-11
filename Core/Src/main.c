@@ -5,12 +5,11 @@
  * Chris Amey and Alan Kusparmakov
  *
  * Video: 
+ * https://drive.google.com/file/d/1hArrJB_lnd-JMD0XwG729pXTaAC3bJnJ/view?usp=sharing
  * 
  * Schematic: 
  * https://drive.google.com/file/d/1SX4DZLqecqLpMrKSfqTl6fLLpEubJk_C/view?usp=sharing
- * 
- *
- * /
+ */
 
 #include "init.h"
 #include "keypad.h"
